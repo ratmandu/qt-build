@@ -1,17 +1,17 @@
 FROM ubuntu:trusty
 
-ARG QT=5.7.1
-ARG QTM=5.7
-ARG QTSHA=fdf6b4fb5ee9ade2dec74ddb5bea9e1738911e7ee333b32766c4f6527d185eb4
+ARG QT=5.8.0
+ARG QTM=5.8
+ARG QTSHA=a11e42faa2e456eb89a31670a8860afa1325f0a8472e40931b419e0dc167649c
 ARG VCS_REF
 ARG BUILD_DATE
 
 LABEL org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.name="qt-build" \
       org.label-schema.description="A headless Qt $QTM build environment for Ubuntu" \
-      org.label-schema.url="e.g. https://github.com/garthk/qt-build" \
+      org.label-schema.url="e.g. https://github.com/ratmandu/qt-build" \
       org.label-schema.vcs-ref="$VCS_REF" \
-      org.label-schema.vcs-url="https://github.com/garthk/qt-build.git" \
+      org.label-schema.vcs-url="https://github.com/ratmandu/qt-build.git" \
       org.label-schema.version="$QT" \
       org.label-schema.schema-version="1.0"
 
@@ -31,6 +31,7 @@ RUN apt-get update -q && \
         openssh-client \
         p7zip \
         xvfb \
+        libgl1-mesa-dev \
     && apt-get clean
 
 ADD qt-installer-noninteractive.qs /tmp/qt/script.qs

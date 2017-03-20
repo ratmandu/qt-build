@@ -31,7 +31,11 @@ Controller.prototype.ComponentSelectionPageCallback = function() {
     var widget = gui.currentPageWidget();
 
     widget.deselectAll();
-    widget.selectComponent("qt.57.gcc_64");
+    widget.selectComponent("qt.58.gcc_64");
+    widget.selectComponent("qt.58.qtcharts");
+    widget.selectComponent("qt.58.datavis3d");
+    widget.selectComponent("qt.58.qtspeech");
+    widget.selectComponent("qt.58.qtvirtualkeyboard");
     // to add more components:
     // widget.selectComponent("qt.57.qtwebengine");
 
